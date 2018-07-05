@@ -58,6 +58,12 @@
 		<property name="dataSource" ref="datasource"/>
 	</bean>
 	
+	<bean class="com.jsako.advisor.ClassAndMethodAnnotationMatchAdvisor">
+		<property name="order" value="1"/>
+		<property name="advice" ref="targetDatasourceInterceptor"/>
+		<property name="targetAnnotationClassname" value="com.jsako.annotations.TargetDataSource"/> 
+	</bean>
+	
 	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" order="10"/>
 	<aop:aspectj-autoproxy proxy-target-class="true"/>
 </beans>

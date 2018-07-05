@@ -26,13 +26,10 @@ public class MybatisMultisourceTest {
 	@Test
 	public void test1(){
 		List<MybatisUser> users = mybatisUserSerivce.getUserById(1);
-		users.forEach((user)->{
-			System.out.println(user);
-		});
+		users.forEach(System.out::println);
 		
-		List<TestUser> users2 = testUserSerivce.getUserById(1);
-		users2.forEach((user)->{
-			System.out.println(user);
-		});
+		List<TestUser> users2 = testUserSerivce.getUserById(3);
+		users2.forEach(System.out::println);
+		//testUserSerivce.toString();
 	}
 }
